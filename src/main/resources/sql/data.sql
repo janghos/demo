@@ -15,7 +15,7 @@ values(
           "한국",
           "https://s3550.smartucc.kr/encodeFile/3550/2022/07/21/e213cde3727f767b637ac47284b71bc7_W.mp4");
 
-    insert into movie(title,directorNm,actorNm,genre,runtime,repRlsDate,rating,posterUrl,plot,star,audiAcc,stillUrl,country,audioUrl)
+insert into movie(title,directorNm,actorNm,genre,runtime,repRlsDate,rating,posterUrl,plot,star,audiAcc,stillUrl,country,audioUrl)
 values(
     "탑건: 매버릭",
     "조셉 코신스키",
@@ -227,9 +227,101 @@ INSERT INTO store
 (price, amount, name, `type`, image)
 VALUES(13000, 500, '더블콤보', '세트', 'https://img.megabox.co.kr/SharedImg/store/2022/03/07/ERDC5wGVMC0YZPIRUsuuaJuAGRyqeDjC_280.png');
 
+INSERT INTO store
+(price, amount, name, `type`, image)
+VALUES(11500, 500, '불닭컵치밥콤보', '세트', 'https://www.fetv.co.kr/data/photos/20220518/art_16516211692297_981edc.jpg');
+
 INSERT INTO cinema(cinema_name, total_seat,lat,lng,star) VALUES ('장승배기', 45,37.505,126.9392,3);
 INSERT INTO cinema(cinema_name, total_seat,lat,lng,star) VALUES ('남양주', 54,37.6534,127.2444,4);
 INSERT INTO cinema(cinema_name, total_seat,lat,lng,star) VALUES ('건대', 63,37.5406,127.0693,4);
 INSERT INTO cinema(cinema_name, total_seat,lat,lng,star) VALUES ('가산', 72,37.4815,126.8826,3.5);
 INSERT INTO cinema(cinema_name, total_seat,lat,lng) VALUES ('부천', 81,37.4841,126.7828);
 INSERT INTO cinema(cinema_name, total_seat,lat,lng,star) VALUES ('부산', 90,35.1153,129.0395,5);
+
+
+insert into user (username, password, nickname, activated) values ('admin', '$2a$08$lDnHPz7eUkSi6ao14Twuau08mzhWrL4kyZGGU5xfiGALO/Vxd5DOi', 'admin', 1);
+insert into user (username, password, nickname, activated) values ('user', '$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 'user', 1);
+insert into user (username, password, nickname, activated) values ('testuser', '$2a$10$4O370jcqJlVAwedLCyc4eeVeR3wuiS1aAk.tEb.IdHnpq1DhDgPh.', '테스트닉', 1);
+
+insert into authority (authority_name) values ('ROLE_USER');
+insert into authority (authority_name) values ('ROLE_ADMIN');
+
+insert into user_authority (user_id, authority_name) values (1, 'ROLE_USER');
+insert into user_authority (user_id, authority_name) values (1, 'ROLE_ADMIN');
+insert into user_authority (user_id, authority_name) values (2, 'ROLE_USER');
+
+
+
+
+
+
+INSERT INTO seatdb (id, booked) VALUES ('A0', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A1', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A2', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A3', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A4', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A5', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A6', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A7', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A8', 0);
+INSERT INTO seatdb (id, booked) VALUES ('A9', 0);
+
+INSERT INTO seatdb (id, booked) VALUES ('B0', 0);
+INSERT INTO seatdb (id, booked) VALUES ('B1', 0);
+INSERT INTO seatdb (id, booked) VALUES ('B2', 0);
+INSERT INTO seatdb (id, booked) VALUES ('B3', 0);
+INSERT INTO seatdb (id, booked) VALUES ('B4', 0);
+INSERT INTO seatdb (id, booked) VALUES ('B5', 0);
+INSERT INTO seatdb (id, booked) VALUES ('B6', 1);
+INSERT INTO seatdb (id, booked) VALUES ('B7', 1);
+INSERT INTO seatdb (id, booked) VALUES ('B8', 1);
+INSERT INTO seatdb (id, booked) VALUES ('B9', 0);
+
+
+INSERT INTO seatdb (id, booked) VALUES ('C0', 0);
+INSERT INTO seatdb (id, booked) VALUES ('C1', 0);
+INSERT INTO seatdb (id, booked) VALUES ('C2', 0);
+INSERT INTO seatdb (id, booked) VALUES ('C3', 1);
+INSERT INTO seatdb (id, booked) VALUES ('C4', 1);
+INSERT INTO seatdb (id, booked) VALUES ('C5', 1);
+INSERT INTO seatdb (id, booked) VALUES ('C6', 1);
+INSERT INTO seatdb (id, booked) VALUES ('C7', 1);
+INSERT INTO seatdb (id, booked) VALUES ('C8', 1);
+INSERT INTO seatdb (id, booked) VALUES ('C9', 0);
+INSERT INTO seatdb (id, booked) VALUES ('C10', 0);
+
+INSERT INTO seatdb (id, booked) VALUES ('D0', 0);
+INSERT INTO seatdb (id, booked) VALUES ('D1', 1);
+INSERT INTO seatdb (id, booked) VALUES ('D2', 1);
+INSERT INTO seatdb (id, booked) VALUES ('D3', 0);
+INSERT INTO seatdb (id, booked) VALUES ('D4', 1);
+INSERT INTO seatdb (id, booked) VALUES ('D5', 1);
+INSERT INTO seatdb (id, booked) VALUES ('D6', 1);
+INSERT INTO seatdb (id, booked) VALUES ('D7', 0);
+INSERT INTO seatdb (id, booked) VALUES ('D8', 0);
+INSERT INTO seatdb (id, booked) VALUES ('D9', 0);
+
+INSERT INTO seatdb (id, booked) VALUES ('E0', 0);
+INSERT INTO seatdb (id, booked) VALUES ('E1', 1);
+INSERT INTO seatdb (id, booked) VALUES ('E2', 1);
+INSERT INTO seatdb (id, booked) VALUES ('E3', 1);
+INSERT INTO seatdb (id, booked) VALUES ('E4', 0);
+INSERT INTO seatdb (id, booked) VALUES ('E5', 0);
+INSERT INTO seatdb (id, booked) VALUES ('E6', 0);
+INSERT INTO seatdb (id, booked) VALUES ('E7', 0);
+INSERT INTO seatdb (id, booked) VALUES ('E8', 0);
+INSERT INTO seatdb (id, booked) VALUES ('E9', 0);
+
+INSERT INTO showing_movie (id, title, cinema_name, showing_date, runtime, restSeat, seat_num, price, showing_lastDate, regDate) VALUES (1, '헌트', '장승배기', '2022-08-15', 125, 45, 'A1', 12000, '2022-09-20', '2022-08-24 02:14:08');
+INSERT INTO showing_movie (id, title, cinema_name, showing_date, runtime, restSeat, seat_num, price, showing_lastDate, regDate) VALUES (2, '탑건: 매버릭', '건대', '2022-07-07', 130, 63, 'B1', 12000, '2022-08-13', '2022-08-24 02:14:11');
+
+
+
+INSERT INTO item_basket (id, user_id, item_name, total_price, total_amount, item_image) VALUES (1, 'Jang', '메가박스 탄산음료(대)', 2000, 2, 'https://market.shosyn.com/assets/data/product/_product_image_413.jpg?u=1560428796');
+INSERT INTO item_basket (id, user_id, item_name, total_price, total_amount, item_image) VALUES (8, 'Jang', '오리지널팝콘R 1', 5000, 2, 'https://ccimg.hellomarket.com/images/2021/item/08/22/02/0843318_2839104_1.jpg?size=s6');
+INSERT INTO item_basket (id, user_id, item_name, total_price, total_amount, item_image) VALUES (10, 'Jang', '더블콤보', 13000, 2, 'https://img.megabox.co.kr/SharedImg/store/2022/03/07/ERDC5wGVMC0YZPIRUsuuaJuAGRyqeDjC_280.png');
+
+
+INSERT INTO movie_basket (id, user_id, title, posterUrl, movie_time, reserveDate, cinema_name, cinema_id, seat_num, total_amount, total_price, mbti) VALUES (23, 'kim', '헌트', 'https://movie-phinf.pstatic.net/20220805_227/1659685387586PIORG_JPEG/movie_image.jpg', '9:30', '2022-09-08T08:18:03.000Z', '장승배기', 0, 'E1,E2,E3', 0, 0, '');
+INSERT INTO movie_basket (id, user_id, title, posterUrl, movie_time, reserveDate, cinema_name, cinema_id, seat_num, total_amount, total_price, mbti) VALUES (24, 'kim', '탑건: 매버릭', 'https://movie-phinf.pstatic.net/20220509_176/1652081912471yhg3N_JPEG/movie_image.jpg', '11:30', '2022-09-01T08:18:43.000Z', '가산', 0, 'D1,D2', 0, 0, '');
+

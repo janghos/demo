@@ -15,13 +15,22 @@ public class MovieService {
     @Autowired
     private MovieMapper movieMapper;
 
+
+    //검색
+    public List<Movie> searchMovie(String searchData){
+        return movieMapper.searchMovie(searchData);
+    }
+
+    //전체조회
     public List<Movie> getAll() {
         return movieMapper.getAllMovie();
     }
 
+    //상세 조회(개별)
     public Movie getId(int id) {
         return movieMapper.getIdMovie(id);
     }
+
 
     public int insert(Movie movie) {
         return  movieMapper.insertMovie(movie);

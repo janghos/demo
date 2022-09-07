@@ -36,6 +36,12 @@ public class MovieController {
         movieService.insert(movie);
         return movie;
     }
+    @PostMapping("search")//검색
+    public List<Movie> searchMovie(@RequestBody String searchData) {
+        return movieService.searchMovie("%" + searchData + "%");
+    }
+
+
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
@@ -48,6 +54,8 @@ public class MovieController {
         movieService.update(id, movie);
         return id + "번 제품 수정되었습니다." + LocalTime.now();
     }
+
+
 
 
     @GetMapping("/{id}/still1")

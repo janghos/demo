@@ -31,4 +31,8 @@
         WHERE id=#{id}
     </update>
 
+    <select id="searchCinema"  resultType="map">
+        SELECT * FROM cinema where cinema_name like #{searchData}
+    </select>
+
 </mapper>

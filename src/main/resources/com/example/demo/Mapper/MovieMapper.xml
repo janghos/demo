@@ -53,4 +53,9 @@
             WHERE movieId=#{id}
     </update>
 
+    <select id="searchMovie"  resultType="map">
+		SELECT * FROM movie where (title like #{searchData}) or (actorNm like #{searchData}) or (directorNm like #{searchData}) or (plot like #{searchData}) or (genre like #{searchData})
+	</select>
+
+
 </mapper>

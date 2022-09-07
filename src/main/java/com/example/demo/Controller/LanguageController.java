@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.example.demo.Service.LanguageService;
 import com.example.demo.VO.Language;
+import com.example.demo.VO.Language2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,10 @@ public class LanguageController {
     @Autowired
     private LanguageService languageService;
 
+    @GetMapping("Rlist")
+    public List<Language2> getRAll(){
+        return languageService.getRAll();
+    }
 
     @GetMapping("list") // 전체 조회
     public List<Language> getAll() {
@@ -46,6 +51,8 @@ public class LanguageController {
         languageService.update(id, language);
         return id + "번 제품 수정되었습니다." + LocalTime.now();
     }
+
+
 
 
 

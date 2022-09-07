@@ -28,7 +28,7 @@ CREATE TABLE store (
                          `amount` int DEFAULT NULL,
                          `name` varchar(45) NOT NULL,
                          `type` varchar(30) NOT NULL,
-                         `image` varchar(100) NOT NULL,
+                         `image` varchar(500) NOT NULL,
                          PRIMARY KEY (`id`),
                          UNIQUE KEY `name_UNIQUE` (`name`),
                          UNIQUE KEY `image_UNIQUE` (`image`)
@@ -49,3 +49,84 @@ create table cinema
     constraint id_UNIQUE
         unique (id)
 );
+
+drop table user;
+
+create table user(
+                     `user_id` int NOT NULL AUTO_INCREMENT,
+                     `username` varchar(45) NOT null,
+                     `password` varchar(200) NOT NULL,
+                     `nickname` varchar(45) NOT NULL,
+                     `activated` varchar(45) NOT NULL,
+                     PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+drop table authority;
+
+create table authority(
+                          `authority_name` varchar(60) NOT null,
+                          PRIMARY KEY (`authority_name`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+drop table user_authority;
+
+create table user_authority(
+                               `user_id` INT NOT NULL ,
+                               `authority_name` varchar(200) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+drop table seatdb;
+
+create table seatdb
+(
+    id     varchar(12)       not null
+        primary key,
+    booked tinyint default 0 not null,
+    constraint id_UNIQUE
+        unique (id)
+);
+
+drop table showing_movie;
+create table showing_movie(
+                              id               int auto_increment primary key,
+                              title            varchar(60)                         not null,
+                              cinema_name      varchar(45)                         not null,
+                              showing_date     varchar(45)                         not null,
+                              runtime          int                                 not null,
+                              restSeat         int                                 not null,
+                              seat_num         varchar(12)                         not null,
+                              price            int              default 12000      not null,
+                              showing_lastDate varchar(45)                         not null,
+                              regDate          timestamp default CURRENT_TIMESTAMP not null
+);
+drop table item_basket;
+create table item_basket
+(
+    id           int auto_increment
+        primary key,
+    user_id      varchar(45)  null,
+    item_name    varchar(45)  not null,
+    total_price  int          null,
+    total_amount int          null,
+    item_image   varchar(100) not null
+);
+
+drop table movie_basket;
+create table movie_basket
+(
+    id           int auto_increment
+        primary key,
+    user_id      varchar(45)  not null,
+    title        varchar(60)  not null,
+    posterUrl    varchar(100) not null,
+    movie_time   varchar(20)  not null,
+    reserveDate  varchar(40)  not null,
+    cinema_name  varchar(45)  not null,
+    cinema_id    int          null,
+    seat_num     varchar(45)  not null,
+    total_amount int          null,
+    total_price  int          null,
+    mbti         varchar(15)  null
+);
+
+
