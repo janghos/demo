@@ -96,6 +96,8 @@ public class SecurityConfig {
                 .antMatchers("/api/").permitAll()
                 .antMatchers("/store").permitAll()
                 .antMatchers("/movie/search").permitAll()
+                .antMatchers("/store/search").permitAll()
+                .antMatchers("/cinema/search").permitAll()
                 .antMatchers("/movie/{id}").permitAll()
                 .antMatchers("/movie/{id}/still1").permitAll()
                 .antMatchers("/movie/{id}/still2").permitAll()
