@@ -36,43 +36,46 @@ public class ExcelController {
             style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
             Row headerRow = sheet.createRow(rowNo++);
-            headerRow.createCell(0).setCellValue("영화등록번호");
-            headerRow.createCell(1).setCellValue("영화제목");
-            headerRow.createCell(2).setCellValue("감독명");
-            headerRow.createCell(3).setCellValue("배우명");
-            headerRow.createCell(4).setCellValue("장르");
-            headerRow.createCell(5).setCellValue("상영시간");
-            headerRow.createCell(6).setCellValue("개봉일");
-            headerRow.createCell(7).setCellValue("순위");
-            headerRow.createCell(8).setCellValue("포스터url");
-            headerRow.createCell(9).setCellValue("줄거리");
-            headerRow.createCell(10).setCellValue("별점");
-            headerRow.createCell(11).setCellValue("관객수");
-            headerRow.createCell(12).setCellValue("스틸이미지url");
-            headerRow.createCell(13).setCellValue("제조국");
-            headerRow.setRowStyle(style);
-            headerRow.createCell(14).setCellValue("스틸영상Url");
-            headerRow.setRowStyle(style);
+
+            headerRow.createCell(2).setCellValue("영화등록번호");
+            headerRow.createCell(3).setCellValue("영화제목");
+            headerRow.createCell(4).setCellValue("감독명");
+            headerRow.createCell(5).setCellValue("배우명");
+            headerRow.createCell(6).setCellValue("장르");
+            headerRow.createCell(7).setCellValue("상영시간");
+            headerRow.createCell(8).setCellValue("개봉일");
+            headerRow.createCell(9).setCellValue("순위");
+            headerRow.createCell(10).setCellValue("포스터url");
+            headerRow.createCell(11).setCellValue("줄거리");
+            headerRow.createCell(12).setCellValue("별점");
+            headerRow.createCell(13).setCellValue("관객수");
+            headerRow.createCell(14).setCellValue("스틸이미지url");
+            headerRow.createCell(15).setCellValue("제조국");
+            headerRow.createCell(16).setCellValue("스틸영상Url");
+
+            for(int i=2; i<=16; i++) {
+                headerRow.getCell(i).setCellStyle(style);
+            }
 
 
             List<ExcelMovie> list = movieService.getMAll();
             for (ExcelMovie movie : list) {
                 Row row = sheet.createRow(rowNo++);
-                row.createCell(0).setCellValue(movie.getMovieid());
-                row.createCell(1).setCellValue(movie.getTitle());
-                row.createCell(2).setCellValue(movie.getDirectornm());
-                row.createCell(3).setCellValue(movie.getActornm());
-                row.createCell(4).setCellValue(movie.getGenre());
-                row.createCell(5).setCellValue(movie.getRuntime());
-                row.createCell(6).setCellValue(movie.getReprlsdate());
-                row.createCell(7).setCellValue(movie.getRating());
-                row.createCell(8).setCellValue(movie.getPosterurl());
-                row.createCell(9).setCellValue(movie.getPlot());
-                row.createCell(10).setCellValue(movie.getStar());
-                row.createCell(11).setCellValue(movie.getAudiacc());
-                row.createCell(12).setCellValue(movie.getStillurl());
-                row.createCell(13).setCellValue(movie.getCountry());
-                row.createCell(14).setCellValue(movie.getAudiourl());
+                row.createCell(2).setCellValue(movie.getMovieid());
+                row.createCell(3).setCellValue(movie.getTitle());
+                row.createCell(4).setCellValue(movie.getDirectornm());
+                row.createCell(5).setCellValue(movie.getActornm());
+                row.createCell(6).setCellValue(movie.getGenre());
+                row.createCell(7).setCellValue(movie.getRuntime());
+                row.createCell(8).setCellValue(movie.getReprlsdate());
+                row.createCell(9).setCellValue(movie.getRating());
+                row.createCell(10).setCellValue(movie.getPosterurl());
+                row.createCell(11).setCellValue(movie.getPlot());
+                row.createCell(12).setCellValue(movie.getStar());
+                row.createCell(13).setCellValue(movie.getAudiacc());
+                row.createCell(14).setCellValue(movie.getStillurl());
+                row.createCell(15).setCellValue(movie.getCountry());
+                row.createCell(16).setCellValue(movie.getAudiourl());
             }
             response.setContentType("ms-vnd/excel");
             response.setHeader("Content-Disposition", "attachment;filename=MovieList.xls");
