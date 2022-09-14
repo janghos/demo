@@ -28,7 +28,7 @@ public class StoreController {
         return storeService.getId(id);
     }
 
-    @PostMapping("insert") // 추가
+    @PostMapping("") // 추가
     public Store post(@RequestBody Store store) {
         storeService.insert(store);
         return store;

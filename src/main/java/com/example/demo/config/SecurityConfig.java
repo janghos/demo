@@ -89,24 +89,41 @@ public class SecurityConfig {
                 .antMatchers("/api/boards").permitAll()
                 .antMatchers("/api/te").permitAll()
                 .antMatchers("/api/abc").permitAll()
-                .antMatchers("/movie").permitAll()
+
                 .antMatchers("/api/abc").permitAll()
                 .antMatchers("/api/{id}").permitAll()
                 .antMatchers("/api/user").permitAll()
                 .antMatchers("/api/").permitAll()
-                .antMatchers("/store").permitAll()
+//              검색
                 .antMatchers("/movie/search").permitAll()
                 .antMatchers("/store/search").permitAll()
                 .antMatchers("/cinema/search").permitAll()
+//              영화
+                .antMatchers("/movie").permitAll()
                 .antMatchers("/movie/{id}").permitAll()
+                .antMatchers("/movie/insert").permitAll()
                 .antMatchers("/movie/{id}/still1").permitAll()
                 .antMatchers("/movie/{id}/still2").permitAll()
                 .antMatchers("/movie/{id}/still3").permitAll()
+//              상영관
                 .antMatchers("/cinema").permitAll()
+                .antMatchers("/cinema/{id}").permitAll()
+                .antMatchers("/cinema/insert").permitAll()
+//              상점
+                .antMatchers("/store").permitAll()
+                .antMatchers("/store/{id}").permitAll()
+                .antMatchers("/store/insert").permitAll()
+//              엑셀
+                .antMatchers("/excel/movie").permitAll()
+                .antMatchers("/excel/cinema").permitAll()
+
                 .antMatchers("/basket").permitAll()
                 .antMatchers("/itembasket").permitAll()
                 .antMatchers("/seat").permitAll()
                 .antMatchers("/Bo/board").permitAll()
+
+
+
 
 //                .antMatchers("/api/test").permitAll()
 
@@ -125,11 +142,11 @@ public class SecurityConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer(){
         return new WebMvcConfigurer(){
-          @Override
-          public void addCorsMappings(CorsRegistry registry){
-              registry.addMapping("/**")
-                      .allowedOrigins("http://localhost:3000");
-          }
+            @Override
+            public void addCorsMappings(CorsRegistry registry){
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:3000");
+            }
 
         };
     }

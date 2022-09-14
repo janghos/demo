@@ -23,7 +23,7 @@ public class LanguageController {
         return languageService.getRAll();
     }
 
-    @GetMapping("list") // 전체 조회
+    @GetMapping("") // 전체 조회
     public List<Language> getAll() {
         return languageService.getAll();
     }
@@ -34,7 +34,7 @@ public class LanguageController {
         return languageService.getId(id);
     }
 
-    @PostMapping("insert") // 추가
+    @PostMapping("") // 추가
     public Language post(@RequestBody Language language) {
         languageService.insert(language);
         return language;

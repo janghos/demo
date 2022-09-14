@@ -3,12 +3,13 @@ package com.example.demo.Controller;
 import java.time.LocalTime;
 import java.util.List;
 
-import com.example.demo.Service.LanguageService;
 import com.example.demo.Service.MovieService;
-import com.example.demo.VO.Language;
 import com.example.demo.VO.Movie;
+import com.example.demo.entity.ExcelMovie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
 
 
 @CrossOrigin
@@ -26,12 +27,13 @@ public class MovieController {
     }
 
 
+
     @GetMapping("/{id}")
     public Movie getById(@PathVariable("id") int id) {
         return movieService.getId(id);
     }
 
-    @PostMapping("insert") // 추가
+    @PostMapping("") // 추가
     public Movie post(@RequestBody Movie movie) {
         movieService.insert(movie);
         return movie;
@@ -71,7 +73,15 @@ public class MovieController {
         return movieService.getStill3(id);
     }
 
+    @GetMapping("/excel")
+    public void donwloadExcel(HttpServletResponse resp) {
+    List<Movie> list = movieService.getAll();
+        System.out.println(list);
+    }
 
-
+    @GetMapping("/excel2")
+    public List<ExcelMovie> getMAll(){
+        return movieService.getMAll();
+    }
 
 }

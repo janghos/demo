@@ -2,8 +2,6 @@ package com.example.demo.Controller;
 
 import com.example.demo.Service.CinemaService;
 import com.example.demo.VO.Cinema;
-import com.example.demo.VO.Movie;
-import com.example.demo.VO.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +23,7 @@ public class CinemaController {
     public Cinema getById(@PathVariable("id") int id) {
         return cinemaService.getId(id);
     }
-    @PostMapping("insert") // 추가
+    @PostMapping("") // 추가
     public Cinema post(@RequestBody Cinema cinema) {
         cinemaService.insert(cinema);
         return cinema;
@@ -44,5 +42,7 @@ public class CinemaController {
     public List<Cinema> searchSearch(@RequestBody String searchData) {
         return cinemaService.searchCinema("%" + searchData + "%");
     }
+
+
 
 }

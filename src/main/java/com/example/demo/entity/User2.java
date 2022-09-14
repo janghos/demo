@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Data
 public class User2 {
-    private int userId;
+    private int user_id;
     private String username;
     private String password;
     private String nickname;

@@ -2,7 +2,6 @@ package com.example.demo.Mapper;
 
 
 import com.example.demo.VO.Cinema;
-import com.example.demo.VO.Store;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

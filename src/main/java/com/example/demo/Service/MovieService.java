@@ -1,9 +1,9 @@
 package com.example.demo.Service;
 
-import com.example.demo.Mapper.LanguageMapper;
 import com.example.demo.Mapper.MovieMapper;
-import com.example.demo.VO.Language;
 import com.example.demo.VO.Movie;
+import com.example.demo.entity.ExcelMovie;
+import com.example.demo.repository.MovieRepository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,8 @@ public class MovieService {
     @Autowired
     private MovieMapper movieMapper;
 
+    @Autowired
+    private MovieRepository movieRepository;
 
     //검색
     public List<Movie> searchMovie(String searchData){
@@ -53,7 +55,9 @@ public class MovieService {
     public String getStill3(int id){
         return movieMapper.getStill3(id);
     }
-
+    public List<ExcelMovie> getMAll() {
+        return movieRepository.findAll();
+    }
 
 
 }
