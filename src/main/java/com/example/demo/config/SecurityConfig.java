@@ -116,13 +116,12 @@ public class SecurityConfig {
 //              엑셀
                 .antMatchers("/excel/movie").permitAll()
                 .antMatchers("/excel/cinema").permitAll()
+                .antMatchers("/excel/store").permitAll()
 
                 .antMatchers("/basket").permitAll()
                 .antMatchers("/itembasket").permitAll()
                 .antMatchers("/seat").permitAll()
                 .antMatchers("/Bo/board").permitAll()
-
-
 
 
 //                .antMatchers("/api/test").permitAll()

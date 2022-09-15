@@ -32,7 +32,6 @@ public class ExcelStore {
     private String type;
 
     @Column(name = "image")
-    private int image;
-
+    private String image;
 }
 

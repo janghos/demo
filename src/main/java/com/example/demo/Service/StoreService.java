@@ -3,6 +3,8 @@ package com.example.demo.Service;
 
 import com.example.demo.Mapper.StoreMapper;
 import com.example.demo.VO.Store;
+import com.example.demo.entity.ExcelStore;
+import com.example.demo.repository.StoreRepository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,10 @@ public class StoreService {
 
         @Autowired
         private StoreMapper storeMapper;
+
+        @Autowired
+        private StoreRepository storeRepository;
+
         public List<Store> searchStore(String searchData){
         return storeMapper.searchStore(searchData);
         }
@@ -35,4 +41,6 @@ public class StoreService {
         public int update(int id,Store store) {
             return storeMapper.updateStore(id,store);
         }
+
+        public List<ExcelStore> getSAll(){ return storeRepository.findAll();}
 }
