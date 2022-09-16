@@ -117,6 +117,8 @@ public class SecurityConfig {
                 .antMatchers("/excel/movie").permitAll()
                 .antMatchers("/excel/cinema").permitAll()
                 .antMatchers("/excel/store").permitAll()
+//              채팅
+                .antMatchers("/tchat/{tchatid}").permitAll()
 
                 .antMatchers("/basket").permitAll()
                 .antMatchers("/itembasket").permitAll()
