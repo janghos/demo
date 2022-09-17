@@ -13,8 +13,8 @@
     </select>
 
     <insert id = "insertTChat">
-        INSERT INTO tchat(user_id,context,tchat_id)
-            VALUES (#{tchat.user_id},#{tchat.context},#{tchatid})
+        INSERT INTO tchat(user_id,context,tchat_id,time)
+            VALUES (#{tchat.user_id},#{tchat.context},#{tchat.tchat_id},now())
     </insert>
 
     <delete id = "deleteTChat">

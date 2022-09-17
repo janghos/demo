@@ -129,4 +129,14 @@ create table movie_basket
     mbti         varchar(15)  null
 );
 
+drop table tchat;
+
+CREATE TABLE `tchat` (
+                         `num` int NOT NULL AUTO_INCREMENT,
+                         `tchat_id` varchar(45) NOT NULL,
+                         `user_id` varchar(45) NOT NULL,
+                         `context` varchar(1000) not null,
+                         `time` varchar(45) not null,
+                         PRIMARY KEY (`num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 

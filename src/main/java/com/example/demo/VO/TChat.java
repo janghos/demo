@@ -8,4 +8,5 @@ public class TChat {
     private String tchat_id;
     private String user_id;
     private String context;
+    private String time;
 }
